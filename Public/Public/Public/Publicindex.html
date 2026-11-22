@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeAlpha E-Commerce Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>🛍️ CodeAlpha Store</h1>
+    <div id="userBar">
+      <button id="openAuthBtn" class="btn btn-outline">Login / Register</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card auth-card hidden" id="authSection">
+      <h2 id="authTitle">Login</h2>
+      <form id="authForm">
+        <div id="nameGroup" class="form-group hidden">
+          <label for="authName">Full Name</label>
+          <input type="text" id="authName" placeholder="Enter your name" />
+        </div>
+        <div class="form-group">
+          <label for="authEmail">Email</label>
+          <input type="email" id="authEmail" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="authPassword">Password</label>
+          <input type="password" id="authPassword" placeholder="Enter password" required />
+        </div>
+        <button type="submit" class="btn btn-primary" id="authSubmitBtn">Login</button>
+      </form>
+      <p class="switch-text">
+        <span id="switchPrompt">New here?</span>
+        <button type="button" id="switchAuthMode" class="link-btn">Create an account</button>
+      </p>
+      <p id="authMessage" class="msg"></p>
+    </section>
+
+    <section>
+      <h2>Products</h2>
+      <div id="productsGrid" class="grid"></div>
+    </section>
+
+    <section class="two-col">
+      <div class="card">
+        <h2>🛒 Your Cart</h2>
+        <div id="cartItems"></div>
+        <div class="cart-total">
+          <strong>Total: ₹<span id="cartTotal">0</span></strong>
+        </div>
+        <form id="checkoutForm" class="checkout-form">
+          <input type="text" id="customerName" placeholder="Customer Name" required />
+          <input type="text" id="customerAddress" placeholder="Delivery Address" required />
+          <button type="submit" class="btn btn-primary">Place Order</button>
+        </form>
+        <p id="orderMessage" class="msg"></p>
+      </div>
+
+      <div class="card">
+        <h2>📦 Your Orders</h2>
+        <div id="ordersList"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
